@@ -4,16 +4,17 @@ const STORAGE_KEY = 'msc_attendance_data_v8';
 // KONFIGURASI SUPABASE REALTIME DATABASE
 // (Dapatkan Project URL & Anon Key di Supabase Console -> Project Settings -> API)
 // =========================================================================
-const SUPABASE_URL = 'https://kvxlfutxljasyyuttfe.supabase.co'; // <--- Tempel Project URL Anda di sini
+const SUPABASE_URL = '[https://kvxlfutxljasyyuttfe.supabase.co](https://kvxlfutxljasyyuttfe.supabase.co)'; // <--- Tempel Project URL Anda di sini
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2eGxmdXR4bHhqYXN5eXV0dGZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM2Nzc2MjUsImV4cCI6MjEwOTI1MzYyNX0.Zx40GOJYmjlmNXhMolijfstnn6umakXwYhZ4mm807Gk'; // <--- Tempel anon public key Anda di sini
 
 let supabaseClient = null;
 
 try {
-    if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'https://xyzcompany.supabase.co') {
-        supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    if (typeof supabase !== 'undefined' && SUPABASE_URL && SUPABASE_ANON_KEY) {
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+}
     }
-} catch (err) {
+ catch (err) {
     console.error("Supabase init failed:", err);
 }
 
